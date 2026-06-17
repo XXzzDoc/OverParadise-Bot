@@ -59,9 +59,9 @@ export const botConfig = {
   applications: {
     // Default questions shown when someone fills out an application.
     defaultQuestions: [
-      { question: "What is your name?", required: true },
-      { question: "How old are you?", required: true },
-      { question: "Why do you want to join?", required: true },
+      { question: "Quel est ton nom?", required: true },
+      { question: "Quel âge as-tu?", required: true },
+      { question: "Pourquoi veut tu rejoindre?", required: true },
     ],
 
     // Embed colors by application status.
@@ -139,7 +139,7 @@ export const botConfig = {
     },
     footer: {
       // Default footer text used in bot embeds.
-      text: "Titan Bot",
+      text: "Over Paradise",
       // Footer icon URL (null = no icon).
       icon: null,
     },
@@ -170,21 +170,21 @@ export const botConfig = {
     startingBalance: 0,
 
     // Maximum bank amount before upgrades (if upgrades are used).
-    baseBankCapacity: 100000,
+    baseBankCapacity: 100000000,
 
     // Daily reward amount.
-    dailyAmount: 100,
+    dailyAmount: 1000,
 
     // Work command random payout range.
-    workMin: 10,
-    workMax: 100,
+    workMin: 100,
+    workMax: 1000,
 
     // Beg command random payout range.
     begMin: 5,
     begMax: 50,
 
     // Chance to succeed when robbing (0.4 = 40%).
-    robSuccessRate: 0.4,
+    robSuccessRate: 0.3,
 
     // Jail time after failed rob (milliseconds).
     // 3600000 = 1 hour.
@@ -204,32 +204,32 @@ export const botConfig = {
   // =========================
   tickets: {
     // Category ID where new tickets are created (null = no forced category).
-    defaultCategory: null,
+    defaultCategory: 1515492746679423016,
 
     // Role IDs allowed to manage/support tickets.
-    supportRoles: [],
+    supportRoles: [1515454732519608331, 1515512780692787200, 1515460608718540830, 1516853363105464331],
 
     // Priority options users/staff can assign.
     priorities: {
       none: {
         emoji: "⚪",
         color: "#95A5A6",
-        label: "None",
+        label: "Autre",
       },
       low: {
         emoji: "🟢",
         color: "#2ECC71",
-        label: "Low",
+        label: "Aide",
       },
       medium: {
         emoji: "🟡",
         color: "#F1C40F",
-        label: "Medium",
+        label: "Question",
       },
       high: {
         emoji: "🔴",
         color: "#E74C3C",
-        label: "High",
+        label: "Réunion",
       },
       urgent: {
         emoji: "🚨",
@@ -239,13 +239,13 @@ export const botConfig = {
     },
 
     // Default priority for new tickets.
-    defaultPriority: "none",
+    defaultPriority: "Autre",
 
     // Category ID where closed tickets are archived.
-    archiveCategory: null,
+    archiveCategory: 1515492746679423016,
 
     // Channel ID where ticket logs are sent.
-    logChannel: null,
+    logChannel: 1515491945542062151,
   },
 
   // =========================
@@ -267,7 +267,7 @@ export const botConfig = {
     maximumDuration: 2592000000,
 
     // Role IDs allowed to host giveaways.
-    allowedRoles: [],
+    allowedRoles: [1515454732519608331, 1515512780692787200, 1516852761898254447, 1515460608718540830],
 
     // Role IDs that bypass giveaway restrictions.
     bypassRoles: [],
@@ -278,13 +278,13 @@ export const botConfig = {
   // =========================
   birthday: {
     // Role ID given to users on their birthday.
-    defaultRole: null,
+    defaultRole: 1516852637201338539,
 
     // Channel ID where birthday announcements are posted.
-    announcementChannel: null,
+    announcementChannel: 1516852496541155478,
 
     // Timezone used to calculate birthday dates.
-    timezone: "UTC",
+    timezone: "CEST",
   },
 
   // =========================
@@ -292,10 +292,10 @@ export const botConfig = {
   // =========================
   verification: {
     // Message shown when posting the verification panel.
-    defaultMessage: "Click the button below to verify yourself and gain access to the server!",
+    defaultMessage: "Clique sur le message ci dessous pour obtenier l'accès au serveur",
 
     // Text on the verification button.
-    defaultButtonText: "Verify",
+    defaultButtonText: "Entrer sur Over Paradise",
 
     // Automatic verification behavior.
     autoVerify: {
@@ -306,7 +306,7 @@ export const botConfig = {
       defaultCriteria: "none",
 
       // Days used when `defaultCriteria` is `account_age`.
-      defaultAccountAgeDays: 7,
+      defaultAccountAgeDays: 10,
 
       // Member count threshold used when `defaultCriteria` is `server_size`.
       // Example: 1000 means auto-verify if server has fewer than 1000 members.
@@ -322,7 +322,7 @@ export const botConfig = {
 
       // Human-readable descriptions for each criteria mode.
       criteria: {
-        account_age: "Account must be older than specified days",
+        account_age: "your account must be older",
         server_size: "All users if server has less than 1000 members",
         none: "All users immediately"
       }
@@ -362,15 +362,15 @@ export const botConfig = {
     // Welcome template posted when a user joins.
     // Placeholders: {user}, {server}, {memberCount}
     defaultWelcomeMessage:
-      "Welcome {user} to {server}! We now have {memberCount} members!",
+      "Bienvenue sur {server}  {user} ! On espère que tu t'y plairas beacoup ! Grâce a toi nous sommes {memberCount} maintenant! ",
     // Goodbye template posted when a user leaves.
     // Placeholders: {user}, {memberCount}
     defaultGoodbyeMessage:
-      "{user} has left the server. We now have {memberCount} members.",
+      "Oh non {user} a quitté le serveur dommage! nous somme descendus a {memberCount} maintenant",
     // Channel ID for welcome messages.
-    defaultWelcomeChannel: null,
+    defaultWelcomeChannel: 1515508469032030218,
     // Channel ID for goodbye messages.
-    defaultGoodbyeChannel: null,
+    defaultGoodbyeChannel: 1515508628742737980,
   },
 
   // =========================
@@ -380,7 +380,7 @@ export const botConfig = {
     defaults: {
       // Default naming/description templates for counter entries.
       name: "{name} Counter",
-      description: "Server {name} counter",
+      description: "Serveur {name} counter",
       // Channel type used for counters (typically "voice").
       type: "voice",
       // Channel name format. `{count}` is replaced automatically.
@@ -394,14 +394,14 @@ export const botConfig = {
     },
     messages: {
       // Default response messages for counter actions.
-      created: "✅ Created counter **{name}**",
-      deleted: "🗑️ Deleted counter **{name}**",
-      updated: "🔄 Updated counter **{name}**",
+      created: "✅ Counter crée ! **{name}**",
+      deleted: "🗑️ Counter supprimé ! **{name}**",
+      updated: "🔄 Counter mis a jour ! **{name}**",
     },
     types: {
       // Built-in counter types and how each count is calculated.
       members: {
-        name: "👥 Members",
+        name: "👥 Membres",
         description: "Total members in the server",
         getCount: (guild) => guild.memberCount.toString(),
       },
@@ -412,7 +412,7 @@ export const botConfig = {
           guild.members.cache.filter((m) => m.user.bot).size.toString(),
       },
       members_only: {
-        name: "👤 Humans",
+        name: "👤 Humains",
         description: "Total human members (non-bots)",
         getCount: (guild) =>
           guild.members.cache.filter((m) => !m.user.bot).size.toString(),
@@ -424,13 +424,13 @@ export const botConfig = {
   // GENERIC BOT MESSAGES
   // =========================
   messages: {
-    noPermission: "You do not have permission to use this command.",
-    cooldownActive: "Please wait {time} before using this command again.",
-    errorOccurred: "An error occurred while executing this command.",
+    noPermission: "Tu n'as pas la permission d'utiliser cette commande.",
+    cooldownActive: "Attend encore {time} avant d'utiliser cette commande a nouveau.",
+    errorOccurred: "Une erreur c'est produite veuillez refaire cette commande plus tard.",
     missingPermissions:
-      "I am missing required permissions to perform this action.",
-    commandDisabled: "This command has been disabled.",
-    maintenanceMode: "The bot is currently in maintenance mode.",
+      "Je n'ai pas les permissions pour utiliser cette commande.",
+    commandDisabled: "cette commande a été désactivée.",
+    maintenanceMode: "Le bot est actuellement entrain d'être mis a jour ! ",
   },
 
   // =========================
